@@ -1,0 +1,24 @@
+{
+  "name": "push-your-github",
+  "version": "1.0.0",
+  "description": "action for myself",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bingoYB/push-your-github.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bingoYB/push-your-github/issues"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.2",
+    "@actions/github": "^2.0.0"
+  },
+  "homepage": "https://github.com/bingoYB/push-your-github#readme"
+}
