@@ -1,5 +1,5 @@
-const git = require('./git')
 const core = require('@actions/core')
+const git = require('./git')
 /** Initializes and runs the action. */
 
 async function start() {
