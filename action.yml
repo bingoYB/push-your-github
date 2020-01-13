@@ -2,7 +2,7 @@ name: 'push-your-github'
 description: '将本地改动提交到指定的分支'
 author: 'bingo[binhdu@foxmail.com]'
 runs:
-  using: 'node12'
+  using: 'node'
   main: 'src/main.js'
 branding:
   icon: 'git-push'
