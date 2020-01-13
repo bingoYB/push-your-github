@@ -1,10 +1,10 @@
 const core = require('@actions/core')
-import { init, deploy } from "./git";
+import { init, push } from "./git";
 /** Initializes and runs the action. */
 (async function () {
   try {
     await init();
-    await deploy();
+    await push();
   } catch (error) {
     console.log("The deployment encountered an error. ❌");
     core.setFailed(error.message);
