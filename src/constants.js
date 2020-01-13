@@ -4,13 +4,15 @@ const github = require('@actions/github')
 
 const { actor, repository } = github.context.payload
 
-export const action = {
+const action = {
   gitHubToken: core.getInput("GITHUB_TOKEN"),
   push_branch: core.getInput("PUSH_BRANCH"),
   name: "GitHub Push Action",
   email: `${process.env.GITHUB_ACTOR || "github-pages-deploy-action"}@users.noreply.github.com`
 }
 
-export const repositoryPath = `https://${actor}:${action.gitHubToken}@github.com/${repository}.git`
+exports.action = action
 
-export const workspace = process.env.GITHUB_WORKSPACE;
+exports.repositoryPath = `https://${actor}:${action.gitHubToken}@github.com/${repository}.git`
+
+exports.workspace = process.env.GITHUB_WORKSPACE;

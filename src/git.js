@@ -1,5 +1,7 @@
-import { exec } from "@actions/exec"
-import {repositoryPath,action,workspace} from './constants'
+// import { exec } from "@actions/exec"
+const exec = require('@actions/exec').exec
+// import {repositoryPath,action,workspace} from './constants'
+const {action,repositoryPath,workspace} = require('./constants')
 const core = require('@actions/core')
 
 
@@ -24,12 +26,7 @@ async function execute(cmd, cwd){
   return Promise.resolve(output)
 }
 
-const hasFilesToCommit = await execute(
-  `git status --porcelain`,
-  workspace
-);
-
-export function init(){
+exports.init = async function init(){
   try {
     if (!action.gitHubToken) {
       return core.setFailed(
@@ -46,7 +43,12 @@ export function init(){
   }
 }
 
-export async function push() {
+exports.push = async function push() {
+  const hasFilesToCommit = await execute(
+    `git status --porcelain`,
+    workspace
+  )
+
   if (!hasFilesToCommit){
     console.log("There is nothing to commit. Exiting... ✅")
     return Promise.resolve()

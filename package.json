@@ -4,7 +4,8 @@
   "description": "action for myself",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,10 @@
     "@actions/core": "^1.2.0",
     "@actions/exec": "^1.0.2",
     "@actions/github": "^2.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
   },
   "homepage": "https://github.com/bingoYB/push-your-github#readme"
 }
