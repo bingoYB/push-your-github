@@ -1,5 +1,5 @@
 // import { exec } from "@actions/exec"
-const exec = require('@actions/exec').exec
+const exec = require("@actions/exec")
 // import {repositoryPath,action,workspace} from './constants'
 const {action,repositoryPath,workspace} = require('./constants')
 const core = require('@actions/core')
@@ -13,8 +13,7 @@ const core = require('@actions/core')
  */
 async function execute(cmd, cwd){
   let output = ""
-
-  await exec(cmd, [], {
+  await exec.exec(cmd, [], {
     cwd,
     listeners: {
       stdout: (data) => {
