@@ -21,4 +21,4 @@ jobs:
         git commit -m "release-deploy from action"
         remote_repo="https://${GITHUB_ACTOR}:${{ secrets.action_token }}@github.com/${GITHUB_REPOSITORY}.git"
         INPUT_BRANCH=${INPUT_BRANCH:-release-v1}
-        git push "${remote_repo}" HEAD:${INPUT_BRANCH}
+        git push --force "${remote_repo}" HEAD:${INPUT_BRANCH}
