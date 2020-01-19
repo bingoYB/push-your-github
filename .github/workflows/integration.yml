@@ -7,8 +7,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: push task
-      uses: bingoYB/push-your-github@release-v1
-      with:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: master
+    # - name: push task
+    #   uses: bingoYB/push-your-github@release-v1
+    #   with:
+    #     ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #     BRANCH: master
