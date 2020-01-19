@@ -1,0 +1,24 @@
+name: release-deploy
+on: [push]
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Install
+      run: |
+        npm install
+        git config user.email "github action"
+        git config user.name "github action"
+        git add node_modules/**
+        
+        rm -rf .github/workflows
+        git add node_modules/**
+        git add -u
+
+        git commit -m "release-deploy from action"
+        remote_repo="https://${GITHUB_ACTOR}:${{ secrets.action_token }}@github.com/${GITHUB_REPOSITORY}.git"
+        INPUT_BRANCH=${INPUT_BRANCH:-release-v1}
+        git push "${remote_repo}" HEAD:${INPUT_BRANCH}
