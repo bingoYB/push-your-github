@@ -32,7 +32,7 @@ exports.init = async function init(){
         "请提供github token用于提交凭证"
       )
     }
-    await execute(`git init`, workspace)
+    // await execute(`git init`, workspace)
     await execute(`git config user.name ${action.name}`, workspace)
     await execute(`git config user.email ${action.email}`, workspace)
   } catch (error) {
