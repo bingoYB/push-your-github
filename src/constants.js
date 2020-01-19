@@ -7,7 +7,7 @@ const { actor, repository } = github.context.payload
 const action = {
   gitHubToken: core.getInput("GITHUB_TOKEN"),
   push_branch: core.getInput("PUSH_BRANCH"),
-  name: "GitHub Push Action",
+  name: "GitHub-Push-Action",
   email: `${process.env.GITHUB_ACTOR || "github-pages-deploy-action"}@users.noreply.github.com`
 }
 
