@@ -1,8 +1,8 @@
 const core = require('@actions/core')
 
-const github = require('@actions/github')
+// const github = require('@actions/github')
 
-const { actor } = github.context.payload
+// const { actor } = github.context.payload
 
 const action = {
   gitHubToken: core.getInput("GITHUB_TOKEN"),
@@ -13,6 +13,6 @@ const action = {
 
 exports.action = action
 
-exports.repositoryPath = `https://${actor}:${action.gitHubToken}@github.com/${process.env.GITHUB_REPOSITORY}.git`
+exports.repositoryPath = `https://${process.env.GITHUB_ACTOR}:${action.gitHubToken}@github.com/${process.env.GITHUB_REPOSITORY}.git`
 
 exports.workspace = process.env.GITHUB_WORKSPACE;
