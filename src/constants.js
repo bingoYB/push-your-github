@@ -7,7 +7,7 @@ const core = require('@actions/core')
 const action = {
   gitHubToken: core.getInput("GITHUB_TOKEN"),
   push_branch: core.getInput("PUSH_BRANCH"),
-  force_push: core.getInput("FORCE_PUSH")||'',
+  force_push: core.getInput("FORCE_PUSH")||false,
   name: "GitHub-Push-Action",
   email: `${process.env.GITHUB_ACTOR || "github-pages-deploy-action"}@users.noreply.github.com`
 }
