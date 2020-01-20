@@ -57,6 +57,6 @@ exports.push = async function push() {
     `git commit -m "push from action."`,
     workspace
   )
-  await execute(`git push ${repositoryPath} ${action.push_branch}`, workspace)
+  await execute(`git push ${action.force_push} ${repositoryPath} ${action.push_branch}`, workspace)
   return Promise.resolve('push success');
 }
